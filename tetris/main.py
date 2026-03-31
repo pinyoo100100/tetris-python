@@ -2,14 +2,18 @@
 
 from __future__ import annotations
 
+import os
 import sys
+
+if __package__ is None or __package__ == "":
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import pygame
 
-from .config import GameConfig
-from .core.game import Game
-from .systems.renderer import Renderer
-from .ui.screens import ScreenManager
+from tetris.config import GameConfig
+from tetris.core.game import Game
+from tetris.systems.renderer import Renderer
+from tetris.ui.screens import ScreenManager
 
 
 def main() -> None:
